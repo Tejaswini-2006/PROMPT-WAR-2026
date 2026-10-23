@@ -60,28 +60,28 @@ export function FinancialProfileForm({ profile, onChange }: FinancialProfileForm
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {/* Quick presets */}
-          <div className="hidden lg:flex items-center gap-1.5 text-xs text-slate-400 mr-2">
-            <span>Presets:</span>
+          <div className="flex items-center gap-1.5 text-xs text-slate-400 mr-1">
+            <span className="font-semibold text-slate-300">Presets:</span>
             <button
               type="button"
               onClick={() => applyPreset(45000, 16000, 9000, 2000)}
-              className="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+              className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             >
               ₹45K Junior
             </button>
             <button
               type="button"
               onClick={() => applyPreset(75000, 28000, 15000, 4000)}
-              className="px-2 py-1 rounded bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 transition-colors"
+              className="px-2.5 py-1 rounded-lg bg-teal-500/25 hover:bg-teal-500/35 text-teal-300 border border-teal-500/50 font-bold transition-colors"
             >
               ₹75K Tech (Demo)
             </button>
             <button
               type="button"
               onClick={() => applyPreset(130000, 45000, 30000, 8000)}
-              className="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+              className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             >
               ₹1.3L Senior
             </button>
@@ -90,7 +90,7 @@ export function FinancialProfileForm({ profile, onChange }: FinancialProfileForm
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-teal-300 transition-colors"
+            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-teal-300 border border-slate-700 transition-colors"
           >
             {isOpen ? 'Collapse Editor' : 'Edit Profile'}
           </button>
@@ -99,44 +99,44 @@ export function FinancialProfileForm({ profile, onChange }: FinancialProfileForm
 
       {/* Real-time Math Breakdown (Always Visible) */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
-        <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
           <span className="text-[11px] font-medium text-slate-400 block mb-1">
             Monthly Take-Home
           </span>
-          <span className="text-sm sm:text-base font-bold text-white">
-            ₹{monthlySalary.toLocaleString('en-IN')}
+          <span className="text-base font-bold text-white block">
+            ₹ {monthlySalary.toLocaleString('en-IN')}
           </span>
-          <span className="text-[10px] text-teal-400 block mt-0.5">User Entered</span>
+          <span className="text-[10px] text-teal-400 block mt-1">User Entered</span>
         </div>
 
-        <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
           <span className="text-[11px] font-medium text-slate-400 block mb-1">
             Fixed Rent & EMIs
           </span>
-          <span className="text-sm sm:text-base font-bold text-slate-200">
-            ₹{fixedObligations.toLocaleString('en-IN')}
+          <span className="text-base font-bold text-slate-200 block">
+            ₹ {fixedObligations.toLocaleString('en-IN')}
           </span>
-          <span className="text-[10px] text-amber-400 block mt-0.5">Deducted First</span>
+          <span className="text-[10px] text-amber-400 block mt-1">Deducted First</span>
         </div>
 
-        <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
           <span className="text-[11px] font-medium text-slate-400 block mb-1">
             Savings Target
           </span>
-          <span className="text-sm sm:text-base font-bold text-emerald-400">
-            ₹{savingsTarget.toLocaleString('en-IN')}
+          <span className="text-base font-bold text-emerald-400 block">
+            ₹ {savingsTarget.toLocaleString('en-IN')}
           </span>
-          <span className="text-[10px] text-emerald-500 block mt-0.5">Protected Nest-Egg</span>
+          <span className="text-[10px] text-emerald-500 block mt-1">Protected Nest-Egg</span>
         </div>
 
-        <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/30">
+        <div className="p-3.5 rounded-xl bg-teal-500/15 border border-teal-500/40">
           <span className="text-[11px] font-medium text-teal-300 block mb-1">
             Spendable Discretionary
           </span>
-          <span className="text-sm sm:text-base font-bold text-teal-300">
-            ₹{netDiscretionaryPlanned.toLocaleString('en-IN')}
+          <span className="text-base font-bold text-teal-300 block">
+            ₹ {netDiscretionaryPlanned.toLocaleString('en-IN')}
           </span>
-          <span className="text-[10px] text-teal-400 block mt-0.5">Calculated Limit</span>
+          <span className="text-[10px] text-teal-400 block mt-1">Calculated Limit</span>
         </div>
       </div>
 

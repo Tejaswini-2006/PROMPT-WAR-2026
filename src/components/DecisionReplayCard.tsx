@@ -72,10 +72,10 @@ export function DecisionReplayCard({
               className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-white capitalize">{cat.category}</span>
-                  <span className="text-xs font-extrabold text-teal-300">
-                    ₹{cat.spent.toLocaleString('en-IN')}
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-sm font-bold text-white capitalize">{cat.category}</span>
+                  <span className="text-sm font-extrabold text-teal-300">
+                    ₹ {cat.spent.toLocaleString('en-IN')}
                   </span>
                 </div>
                 <div className="text-[11px] text-slate-400 mb-2 font-mono">
@@ -93,7 +93,7 @@ export function DecisionReplayCard({
       {/* 3. What May Happen */}
       <div className="mb-5 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
         <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2 flex items-center gap-1.5">
-          <AlertTriangle className="w-3.5 h-3.5" />
+          <AlertTriangle className="w-4 h-4" />
           <span>3. What May Happen If Current Pace Continues</span>
         </h3>
         <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
@@ -105,7 +105,7 @@ export function DecisionReplayCard({
       <div>
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-4 h-4" />
             <span>4. Corrective Action Scenarios (Interactive Replay)</span>
           </h3>
           <span className="text-[11px] text-slate-400">
@@ -113,7 +113,7 @@ export function DecisionReplayCard({
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-4">
           {decisionReplay.correctiveActions.map((action) => {
             const isSelected = selectedScenarioId === action.id;
             const isAdopted = adoptedActionId === action.id;
@@ -126,11 +126,11 @@ export function DecisionReplayCard({
                 className={`text-left p-4 rounded-xl transition-all border flex flex-col justify-between ${
                   isSelected
                     ? 'bg-teal-500/15 border-teal-400 shadow-lg shadow-teal-500/10'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    : 'bg-slate-900/80 border-slate-800 hover:border-slate-700'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                  <div className="flex items-center justify-between gap-1 mb-2">
                     <span className="text-xs font-bold text-white line-clamp-1">
                       {action.title}
                     </span>
@@ -140,22 +140,22 @@ export function DecisionReplayCard({
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-slate-400 mb-3 leading-normal">
+                  <p className="text-xs text-slate-300 mb-3 leading-normal">
                     {action.description}
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
+                <div className="pt-2.5 border-t border-slate-800 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] text-slate-400 block">Est. Savings</span>
                     <span className="text-xs font-extrabold text-emerald-400">
-                      +₹{action.projectedTotalSavings.toLocaleString('en-IN')}
+                      +₹ {action.projectedTotalSavings.toLocaleString('en-IN')}
                     </span>
                   </div>
                   <div className="text-right">
                     <span className="text-[10px] text-slate-400 block">New Daily Cap</span>
                     <span className="text-xs font-extrabold text-teal-300">
-                      ₹{Math.round(action.newDailyAllowance)}/day
+                      ₹ {Math.round(action.newDailyAllowance)} / day
                     </span>
                   </div>
                 </div>
